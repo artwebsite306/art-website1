@@ -1,0 +1,584 @@
+/* ===========================================
+   Asefru & Roots — Artist's Space
+   Color Palette:
+   - Background: #EDE3D6 (warm sand/beige)
+   - Accent: #C97A5A (soft terracotta)
+   - Secondary: #D4A65A (muted ochre)
+   - Text: #3E2F28 (dark warm brown)
+   - Deep accent: #8B4A3A (earthy red)
+   =========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #3E2F28;
+    background-color: #EDE3D6;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+/* ===========================================
+   Header
+   =========================================== */
+.site-header {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.nav {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #3E2F28;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+    opacity: 1;
+}
+
+.header-content {
+    text-align: center;
+}
+
+.header-decoration {
+    font-size: 2rem;
+    color: #C97A5A;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.site-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 400;
+    color: #3E2F28;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.site-tagline {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #3E2F28;
+    opacity: 0.6;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-family: 'Jost', sans-serif;
+}
+
+/* ===========================================
+   Introduction
+   =========================================== */
+.intro {
+    padding: 6rem 2rem;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.intro-content {
+    position: relative;
+}
+
+.intro-accent {
+    width: 40px;
+    height: 3px;
+    background-color: #D4A65A;
+    margin-bottom: 2rem;
+}
+
+.intro-text {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #3E2F28;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.intro-text:last-child {
+    margin-bottom: 0;
+}
+
+/* ===========================================
+   Section Headers
+   =========================================== */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #C97A5A;
+    margin-bottom: 0.75rem;
+}
+
+.section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 400;
+    color: #3E2F28;
+}
+
+/* ===========================================
+   Works Section
+   =========================================== */
+.works {
+    padding: 5rem 2rem;
+    background-color: #E5DAC9;
+}
+
+.works-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.work-item {
+    background: #EDE3D6;
+    transition: transform 0.4s ease;
+}
+
+.work-item:hover {
+    transform: translateY(-4px);
+}
+
+.work-item--large {
+    grid-column: span 2;
+}
+
+.work-item--large .work-image {
+    height: 400px;
+}
+
+.work-image {
+    width: 100%;
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.work-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 70%, rgba(62, 47, 40, 0.05));
+}
+
+.work-info {
+    padding: 1.25rem 1.5rem;
+}
+
+.work-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #3E2F28;
+    margin-bottom: 0.25rem;
+}
+
+.work-meta {
+    font-size: 0.85rem;
+    color: #3E2F28;
+    opacity: 0.5;
+}
+
+/* ===========================================
+   Gallery Section
+   =========================================== */
+.gallery {
+    padding: 5rem 2rem;
+    background-color: #E5DAC9;
+}
+
+.gallery-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6rem;
+}
+
+.gallery-item {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-item:hover img,
+.gallery-item:focus-visible img {
+    opacity: 0.85;
+    transform: scale(1.01);
+}
+
+.gallery-name {
+    display: block;
+    padding-top: 0.55rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #3E2F28;
+    opacity: 0.75;
+}
+
+.gallery-item:focus-visible {
+    outline: 2px solid #8B4A3A;
+    outline-offset: 3px;
+}
+
+/* ===========================================
+   Artwork Modal
+   =========================================== */
+.modal-open {
+    overflow: hidden;
+}
+
+.artwork-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    z-index: 1000;
+}
+
+.artwork-modal[aria-hidden="false"] {
+    display: flex;
+}
+
+.artwork-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(62, 47, 40, 0.65);
+}
+
+.artwork-modal__dialog {
+    position: relative;
+    width: min(760px, 100%);
+    max-height: 88vh;
+    overflow: auto;
+    background: #EDE3D6;
+    padding: 1rem 1rem 1.5rem;
+    border: 1px solid rgba(62, 47, 40, 0.18);
+    box-shadow: 0 16px 30px rgba(62, 47, 40, 0.22);
+}
+
+.artwork-modal__close {
+    border: 0;
+    background: transparent;
+    color: #8B4A3A;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0.2rem 0;
+    margin-bottom: 0.8rem;
+}
+
+.artwork-modal__image {
+    width: 100%;
+    max-height: 58vh;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.artwork-modal__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.artwork-modal__description {
+    font-size: 1rem;
+    line-height: 1.75;
+    opacity: 0.84;
+}
+
+/* ===========================================
+   Stories Section
+   =========================================== */
+.stories {
+    padding: 6rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.stories-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.story-item {
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(62, 47, 40, 0.1);
+}
+
+.story-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.story-date {
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #D4A65A;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.story-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #3E2F28;
+    margin-bottom: 1rem;
+}
+
+.story-excerpt {
+    font-size: 1rem;
+    color: #3E2F28;
+    opacity: 0.75;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+}
+
+.story-link {
+    font-size: 0.9rem;
+    color: #C97A5A;
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    transition: color 0.3s ease;
+}
+
+.story-link:hover {
+    color: #8B4A3A;
+}
+
+/* ===========================================
+   Contact Section
+   =========================================== */
+.contact {
+    padding: 6rem 2rem;
+    background-color: #E5DAC9;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #3E2F28;
+    margin-bottom: 1.5rem;
+}
+
+.contact-text {
+    font-size: 1.1rem;
+    color: #3E2F28;
+    opacity: 0.75;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.contact-email {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    color: #C97A5A;
+    text-decoration: none;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.contact-email:hover {
+    border-bottom-color: #C97A5A;
+}
+
+.contact-location {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(62, 47, 40, 0.1);
+}
+
+.contact-location span {
+    font-size: 0.85rem;
+    color: #3E2F28;
+    opacity: 0.5;
+    letter-spacing: 0.05em;
+}
+
+/* ===========================================
+   Footer
+   =========================================== */
+.site-footer {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.footer-mark {
+    font-size: 1.5rem;
+    color: #C97A5A;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+}
+
+.footer-text {
+    font-size: 0.85rem;
+    color: #3E2F28;
+    opacity: 0.4;
+    letter-spacing: 0.1em;
+}
+
+/* ===========================================
+   Responsive Design
+   =========================================== */
+@media (max-width: 768px) {
+    .nav {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-bottom: 3rem;
+        gap: 1.5rem;
+    }
+
+    .site-header {
+        min-height: auto;
+        padding: 3rem 2rem 5rem;
+    }
+
+    .intro {
+        padding: 4rem 2rem;
+    }
+
+    .intro-text {
+        font-size: 1.25rem;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .work-item--large {
+        grid-column: span 1;
+    }
+
+    .work-item--large .work-image {
+        height: 280px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-name {
+        font-size: 0.75rem;
+    }
+
+    .stories {
+        padding: 4rem 2rem;
+    }
+
+    .story-title {
+        font-size: 1.25rem;
+    }
+
+    .contact {
+        padding: 4rem 2rem;
+    }
+
+    .contact-email {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        gap: 1.25rem;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+    }
+
+    .gallery-grid {
+        gap: 0.9rem;
+    }
+
+    .work-image {
+        height: 220px;
+    }
+
+    .artwork-modal {
+        padding: 0.75rem;
+    }
+
+    .artwork-modal__dialog {
+        max-height: 92vh;
+    }
+
+    .artwork-modal__title {
+        font-size: 1.45rem;
+    }
+}
